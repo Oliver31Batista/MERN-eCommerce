@@ -41,3 +41,8 @@
     1. npm install react-bootstrap bootstrap
     2. update App.js
     3. add footer
+
+7. Create Product and Rating Component
+    1. create Rating component
+    2. create Product component
+    3. Use rating component in Product component
