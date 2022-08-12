@@ -7,7 +7,7 @@ const data = {
             price: 120,
             countInStock: 10,
             brand: 'Nike',
-            rating: 4.5,
+            rating: 2.5,
             numReviews: 10,
             description: 'high quality product'
         },
@@ -16,9 +16,9 @@ const data = {
             slug: 'nike-slim-pants',
             image: '/images/p2.jpg',
             price: 170,
-            countInStock: 20,
+            countInStock: 0,
             brand: 'Nike',
-            rating: 4.5,
+            rating: 0,
             numReviews: 10,
             description: 'high quality product'
         },

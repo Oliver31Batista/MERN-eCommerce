@@ -3,22 +3,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useReducer } from 'react';
 import logger from 'use-reducer-logger';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap//esm/Col';
 import Product from '../components/Product';
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'FETCH_REQUEST':
-      return { ...state, loading: true };
-    case 'FETCH_SUCCESS':
-      return { ...state, products: action.payload, loading: false };
-    case 'FETCH_FAIL':
-      return { ...state, loading: false, error: action.payload };
-    default:
-      return state;
-  }
-};
+import { reducer } from '../config/const';
+import { Helmet } from 'react-helmet-async';
 
 const HomeScreen = () => {
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
@@ -42,6 +31,9 @@ const HomeScreen = () => {
 
   return (
     <>
+      <Helmet>
+        <title>OM-Store</title>
+      </Helmet>
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
