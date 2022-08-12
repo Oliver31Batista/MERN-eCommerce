@@ -8,6 +8,8 @@ import Col from 'react-bootstrap//esm/Col';
 import Product from '../components/Product';
 import { reducer } from '../config/const';
 import { Helmet } from 'react-helmet-async';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 
 const HomeScreen = () => {
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
@@ -37,9 +39,9 @@ const HomeScreen = () => {
       <h1>Featured Products</h1>
       <div className="products">
         {loading ? (
-          <div>Loading...</div>
+          <LoadingBox />
         ) : error ? (
-          <div>{error}</div>
+          <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <Row>
             {products.map((product) => (
